@@ -1,0 +1,8 @@
+os
+urllib
+traceback
+regex
+time
+seleniumwire
+selenium==3.141.0
+progressbar

@@ -90,7 +90,7 @@ Your input: """).upper()
     if save == "YES":
         with open(f"Backup of {book_data}.txt", "w") as f:
             f.write(str(all_pages))
-        print(f"Succesfully backed up the book in {book_data}.txt!")
+        print(f"Succesfully backed up the book in "Backup of {book_data}.txt"!")
         
     elif save != "NO":
         print("Invalid input. Please try again.")

@@ -151,7 +151,7 @@ def download_imgs(pages, cookie, directory):
                         ("cookie", cookie)]
     urllib.request.install_opener(opener)
     
-    for number, url in bar.progressbar(pages.items()):
+    for number, url in bar(pages.items()):
         urllib.request.urlretrieve(url, os.path.join(directory, f"page{number}.png"))
 
 def step1():

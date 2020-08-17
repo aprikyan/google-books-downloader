@@ -224,7 +224,8 @@ Your input: """)
     
     try:
         new_directory = os.path.join(main_directory, book_data)
-        os.mkdir(new_directory)
+        if not os.path.exists(new_directory):
+            os.mkdir(new_directory)
     except:
         print("Invalid input. Please try again.")
         step3()

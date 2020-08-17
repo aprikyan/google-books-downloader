@@ -90,7 +90,7 @@ Your input: """).upper()
     if save == "YES":
         with open(f"Backup of {book_data}.txt", "w") as f:
             f.write(str(all_pages))
-        print(f"Succesfully backed up the book in "Backup of {book_data}.txt"!")
+        print(f"Succesfully backed up the book in \"Backup of {book_data}.txt\"!")
         
     elif save != "NO":
         print("Invalid input. Please try again.")
@@ -165,7 +165,7 @@ Your input: """).upper()
     if from_url == "YES":
         data_url, pages_url = get_book_url()
         book_data = get_book_data(data_url)
-        print(f"\nWe will now process the pages of {book_data} one by one. Sit back and relax, as this may take some time, depending on the number of its pages.\n")
+        print(f"\nWe will now process the pages of \"{book_data}\" one by one. Sit back and relax, as this may take some time, depending on the number of its pages.\n")
         reqs = capture_requests(pages_url)
         all_pages = extract_urls(reqs)
         print("""Now that most of the job is done (yahoo!), it is highly recommended to backup the current progress we have made, so as not to lose it if an error happens to be thrown afterward.

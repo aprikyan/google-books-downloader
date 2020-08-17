@@ -25,9 +25,9 @@ Step 1: Paste the URL of the book preview to be downloaded.
 
 Your input: """)
     
-    try:
+    if re.findall(r"id=[A-Za-z0-9]+", url):
         id_part = re.findall(r"id=[A-Za-z0-9]+", url)[-1]
-    except:
+    else:
         print("Invalid input. Please try again.")
         get_book_url()
         
@@ -41,11 +41,11 @@ def get_book_data(url):
     """
     driver.get(url)
     driver.refresh()
-    sleep(5)
+    sleep(3)
     title = driver.find_element_by_class_name("gb-volume-title").text
     author = driver.find_element_by_class_name("addmd").text
     
-    return f"{title} ({author})"
+    return f"{title} (b{author[1:]})"
 
 def capture_requests(url):
     """
@@ -64,8 +64,8 @@ def capture_requests(url):
         for i in range(25):
             html = driver.find_element_by_tag_name("body")
             html.click()
-            for j in range(50):
-                html.send_keys(Keys.DOWN)
+            html.send_keys(Keys.SPACE)
+        sleep(2)
 
     return str(driver.requests)
 

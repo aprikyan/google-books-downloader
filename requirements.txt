@@ -1,8 +1,5 @@
-os
-urllib
-traceback
 regex
-time
-seleniumwire
-selenium==3.141.0
+traceback
 progressbar
+seleniumwire>=2.1.0
+selenium==3.141.0

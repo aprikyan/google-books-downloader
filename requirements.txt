@@ -1,5 +1,4 @@
 regex
-traceback
 progressbar
-seleniumwire>=2.1.0
 selenium==3.141.0
+seleniumwire>=2.1.0
